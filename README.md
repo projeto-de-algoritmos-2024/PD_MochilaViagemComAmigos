@@ -1,4 +1,4 @@
-# AlgoritmosAmbiciosos-LeetCode_Problems
+# PD_MochilaViagemComAmigos
 
 **Conteúdo da Disciplina**: Programação Dinâmica<br>
 
