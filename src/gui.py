@@ -56,12 +56,6 @@ class PlanejadorMochila(QMainWindow):
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
-        
- 
-
-    def desativar_peso_maximo(self):
-        if self.peso_maximo_entry.text():
-            self.peso_maximo_entry.setReadOnly(True)
 
     def adicionar_item(self):
         try:
