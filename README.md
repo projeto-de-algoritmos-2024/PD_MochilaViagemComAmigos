@@ -10,7 +10,7 @@
 ## Sobre 
 Projeto para auxiliar na distruição de itens em várias mochilas, pensando sempre em obter o maior valor "Valor" possível </br>
 
-[Apresentação do projeto](https://youtu.be/-F1_wgeV-uw) 
+[Apresentação do projeto](https://youtu.be/MHkMjcLNVb8) 
 
 ## Screenshots
 
