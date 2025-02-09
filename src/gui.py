@@ -22,7 +22,6 @@ class PlanejadorMochila(QMainWindow):
         layout.addWidget(self.peso_maximo_label)
         self.peso_maximo_entry = QLineEdit()
         layout.addWidget(self.peso_maximo_entry)
-        self.peso_maximo_entry.editingFinished.connect(self.desativar_peso_maximo)
 
         # Entradas para item
         self.nome_label = QLabel("Nome do item:")
@@ -45,7 +44,7 @@ class PlanejadorMochila(QMainWindow):
         self.adicionar_item_button.clicked.connect(self.adicionar_item)
         layout.addWidget(self.adicionar_item_button)
 
-        self.calcular_mochila_button = QPushButton("Calcular Mochila")
+        self.calcular_mochila_button = QPushButton("Calcular Mochilas")
         self.calcular_mochila_button.clicked.connect(self.calcular_mochila)
         layout.addWidget(self.calcular_mochila_button)
 
@@ -70,7 +69,7 @@ class PlanejadorMochila(QMainWindow):
             peso = validar_peso(self.peso_entry.text())
             valor = validar_valor(self.valor_entry.text())
 
-            self.itens.append((nome, peso, valor))
+            self.itens.append((nome, valor, peso))
             self.lista_itens.append(f"{nome} - Peso: {peso}, Valor: {valor}")
             self.nome_entry.clear()
             self.peso_entry.clear()
@@ -83,8 +82,8 @@ class PlanejadorMochila(QMainWindow):
             peso_maximo = validar_peso_list(self.peso_maximo_entry.text())
             valor_total, escolhidos = knapsack_multi(self.itens, peso_maximo)
             resultado = f"Valor Total: {valor_total}\nItens Escolhidos:\n"
-            for i, item in enumerate(escolhidos):
-                resultado += f"Amigo {i + 1} carregará: {item}\n"
+            for i, mochila in enumerate(escolhidos):
+                resultado += f"Amigo {i + 1} carregará: {[item["NomeItem"] for item in mochila]}\n"
             QMessageBox.information(self, "Resultado", resultado)
 
 

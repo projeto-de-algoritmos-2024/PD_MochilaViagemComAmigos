@@ -1,45 +1,58 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# AlgoritmosAmbiciosos-LeetCode_Problems
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Conteúdo da Disciplina**: Programação Dinâmica<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 20/0043030  |  Renann de Oliveira Gomes |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Projeto para auxiliar na distruição de itens em várias mochilas, pensando sempre em obter o maior valor "Valor" possível </br>
+
+[Apresentação do projeto](https://youtu.be/-F1_wgeV-uw) 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+### Campos preeenchidos e itens adicionados na lista </br>
+![image](./images/exemplo1.png)
+
+### Resultado da distribuição de itens </br>
+![image](./images/exemplo2.png)
+
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python<br>
+
+Python instalado localmente </br>
+1°- Clone o repositório </br>
+2°- Crie o ambiente virtual </br>
+``` 
+python -m venv venv
+```
+3°- Ative o ambiente virtual </br>
+```
+cd ./venv/Scripts/activate.bat
+```
+4°- Instale as dependências necessárias com </br>
+```
+pip install -r requirements.txt
+```
+5° - Execute o arquivo "main.py" com </br>
+```
+python main.py
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+No primeiro input insira (em inteiro) os valores, do máximo de carga que cada mochila pode carregar </br>
+Nos 3 inputs será adiciona os atributos de cada item, sendo: </br>
+1- Nome do item </br>
+2- Peso do Item  </br>
+3- Valor do item </br>
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Depois que preenchidos aperte em "Adicionar item", o item será adicionado na lista a baixo </br>
+Em seguida repita o processo até que todos os itens tenham sido adicionados
 
+Por último aperte em "Calcular Mochilas" para que o algoritmo seja executado
 
-
-
+A resposta é composta por 1 frase apresentando o máximo de peso 

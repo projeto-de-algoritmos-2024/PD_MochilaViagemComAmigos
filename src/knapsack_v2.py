@@ -1,6 +1,6 @@
 from typing import List, Tuple
 
-def knapsack_multi(items: List[Tuple[str, int, int]], capacities: List[int]) -> Tuple[int, List[List[str]]]:
+def knapsack_multi(items: List[Tuple[str, int, int]], capacities: List[int]) -> Tuple[int, List[List[object]]]:
     n = len(items)
     k = len(capacities)
     dp = [[[0] * (cap + 1) for _ in range(n + 1)] for cap in capacities]
@@ -24,10 +24,15 @@ def knapsack_multi(items: List[Tuple[str, int, int]], capacities: List[int]) -> 
             if i - 1 not in used_items and dp[j][i][w] != dp[j][i - 1][w]:
                 name, value, weight = items[i - 1]
                 if w >= weight and dp[j][i][w] == value + dp[j][i - 1][w - weight]:
-                    selected[j].append(name)
+                    selected[j].append({"NomeItem": name, "Valor": value, "Peso": weight})
                     w -= weight
                     used_items.add(i - 1)
     
     for lst in selected:
         lst.reverse()
-    return sum(dp[j][n][capacities[j]] for j in range(k)), selected
+
+    valorTotal = 0
+    for mochila in selected:
+        for item in mochila:
+            valorTotal += item["Valor"]
+    return valorTotal, selected
